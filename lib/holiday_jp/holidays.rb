@@ -14,7 +14,7 @@ module HolidayJp
         yaml = YAML.load_file(file)
       end
       yaml.map do |key, value|
-        @holidays[key] = Holiday.new(key, value)
+        @holidays[key.to_date] = Holiday.new(key, value)
       end
     end
 
